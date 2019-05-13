@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.arp.mvvmbaseandroid.R
+import com.arp.mvvmbaseandroid.common.startActivityExt
 import com.arp.mvvmbaseandroid.domain.model.TransactionList
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,11 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         val viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
 
-        viewModel.transactionObservable.observe(this, object : Observer<TransactionList> {
-            override fun onChanged(t: TransactionList?) {
-                text_view.text = t!!.transactions[0].toString()
-            }
-        })
+        viewModel.transactionObservable.observe(this,
+            Observer<TransactionList> {
+                text_view.text = it!!.transactions[0].toString()
+            })
 
         viewModel.error.observe(this,
             Observer<Throwable> {
