@@ -1,14 +1,18 @@
 package com.arp.mvvmbaseandroid.domain.usecase
 
 import android.util.Log
+import com.arp.mvvmbaseandroid.data.network.ApiService
 import kotlinx.coroutines.*
+import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 typealias CompletionBlock<T> = UseCase.Request<T>.() -> Unit
 
 abstract class UseCase<T> {
 
-    // inject apiservice here
+
+    @Inject
+    lateinit var apiService: ApiService
 
     private var parentJob: Job = Job()
     var backgroundContext: CoroutineContext = Dispatchers.IO

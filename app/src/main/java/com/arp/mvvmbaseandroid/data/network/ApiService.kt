@@ -1,4 +1,4 @@
-package com.arp.mvvmbaseandroid.data
+package com.arp.mvvmbaseandroid.data.network
 
 import com.arp.mvvmbaseandroid.domain.model.TransactionList
 import kotlinx.coroutines.Deferred

@@ -1,6 +1,6 @@
 package com.arp.mvvmbaseandroid.data.repository
 
-import com.arp.mvvmbaseandroid.data.ApiService
+import com.arp.mvvmbaseandroid.data.network.ApiService
 import com.arp.mvvmbaseandroid.domain.model.TransactionList
 import com.arp.mvvmbaseandroid.domain.repository.TransactionRepository
 
