@@ -1,15 +1,14 @@
 package com.arp.mvvmbaseandroid.domain.usecase
 
-import android.util.Log
 import com.arp.mvvmbaseandroid.data.network.ApiService
 import kotlinx.coroutines.*
+import timber.log.Timber
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 typealias CompletionBlock<T> = UseCase.Request<T>.() -> Unit
 
 abstract class UseCase<T> {
-
 
     @Inject
     lateinit var apiService: ApiService
@@ -31,10 +30,10 @@ abstract class UseCase<T> {
                 }
                 response(result)
             } catch (cancellationException: CancellationException) {
-                Log.e("UseCase", "cancelException", cancellationException)
+                Timber.e(cancellationException, "cancelException")
                 response(cancellationException)
             } catch (e: Exception) {
-                Log.e("UseCase", "exception ${e.localizedMessage}")
+                Timber.e("exception ${e.localizedMessage}")
             }
         }
     }
@@ -58,15 +57,12 @@ abstract class UseCase<T> {
         }
 
         fun onError(block: (Throwable) -> Unit) {
-
             onError = block
-
         }
 
         fun onCancel(block: (CancellationException) -> Unit) {
             onCancel = block
         }
-
 
         operator fun invoke(result: T) {
             onComplete?.invoke(result)

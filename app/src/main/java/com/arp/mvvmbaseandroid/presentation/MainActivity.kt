@@ -1,6 +1,7 @@
 package com.arp.mvvmbaseandroid.presentation
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -14,13 +15,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        val viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
 
         viewModel.transactionObservable.observe(this, object : Observer<TransactionList> {
             override fun onChanged(t: TransactionList?) {
                 text_view.text = t!!.transactions[0].toString()
             }
         })
+
+        viewModel.error.observe(this,
+            Observer<Throwable> {
+                Toast.makeText(this@MainActivity, "${it.message}", Toast.LENGTH_LONG).show()
+            })
 
     }
 

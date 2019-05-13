@@ -1,15 +1,17 @@
 package com.arp.mvvmbaseandroid.presentation
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.arp.mvvmbaseandroid.data.usecases.GetTransactionUseCase
 import com.arp.mvvmbaseandroid.domain.model.TransactionList
+import timber.log.Timber
 
 
-class MainViewModel : ViewModel() {
+class MainActivityViewModel : ViewModel() {
 
     val transactionObservable = MutableLiveData<TransactionList>()
+    val error = MutableLiveData<Throwable>()
+
     private val getTransactionUseCase = GetTransactionUseCase()
 
     var userId = ""
@@ -27,15 +29,20 @@ class MainViewModel : ViewModel() {
             }
 
             onError {
-                Log.e("Error", it.message)
+                Timber.e(it)
             }
 
             onCancel {
-                Log.e("Error", it.localizedMessage)
+                Timber.e(it.localizedMessage)
             }
         }
 
 
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        getTransactionUseCase.unsubscribe()
     }
 
 }
