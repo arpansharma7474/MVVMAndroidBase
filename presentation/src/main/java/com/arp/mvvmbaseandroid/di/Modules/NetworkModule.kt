@@ -2,8 +2,8 @@ package com.arp.mvvmbaseandroid.di.Modules
 
 import android.content.SharedPreferences
 import com.arp.mvvmbaseandroid.BuildConfig
-import com.arp.mvvmbaseandroid.common.Config
-import com.arp.mvvmbaseandroid.common.SecurityInterceptor
+import com.arp.mvvmbaseandroid.util.SecurityInterceptor
+import com.example.common.util.Config
 import com.example.data.network.ApiService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module

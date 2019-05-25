@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.arp.mvvmbaseandroid.di.Modules.AppModule
 import com.arp.mvvmbaseandroid.di.Modules.NetworkModule
-import com.arp.mvvmbaseandroid.presentation.BaseViewModel
+import com.arp.mvvmbaseandroid.main.base.BaseViewModel
 import com.example.data.network.ApiService
 import dagger.Component
 import javax.inject.Singleton

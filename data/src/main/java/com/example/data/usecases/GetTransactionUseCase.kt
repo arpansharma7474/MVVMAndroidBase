@@ -1,15 +1,15 @@
 package com.example.data.usecases
 
+import com.example.common.data_classes.TransactionList
 import com.example.data.network.ApiService
 import com.example.data.repository.TransactionsRepositoryImpl
-import com.example.domain.model.TransactionList
 import com.example.domain.usecase.UseCase
 
-class GetTransactionUseCase(val apiService: ApiService) :
+class GetTransactionUseCase(private val apiService: ApiService) :
     UseCase<TransactionList>() {
 
     var page = -1
-    var userId = ""
+    var userId = "Y5bmFQUKYwOJOGDeZ6NErWfvrqV2"
 
     private val transactionRepository by lazy {
         TransactionsRepositoryImpl(apiService)

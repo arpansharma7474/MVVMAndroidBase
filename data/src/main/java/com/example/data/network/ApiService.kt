@@ -1,6 +1,6 @@
 package com.example.data.network
 
-import com.example.domain.model.TransactionList
+import com.example.common.data_classes.TransactionList
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Query

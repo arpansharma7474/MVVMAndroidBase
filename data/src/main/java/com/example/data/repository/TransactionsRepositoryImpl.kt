@@ -1,7 +1,7 @@
 package com.example.data.repository
 
+import com.example.common.data_classes.TransactionList
 import com.example.data.network.ApiService
-import com.example.domain.model.TransactionList
 import com.example.domain.repository.TransactionRepository
 
 class TransactionsRepositoryImpl(private val apiService: ApiService) : TransactionRepository {

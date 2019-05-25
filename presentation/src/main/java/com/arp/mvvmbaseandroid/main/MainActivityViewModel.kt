@@ -1,6 +1,7 @@
-package com.arp.mvvmbaseandroid.presentation
+package com.arp.mvvmbaseandroid.main
 
 import androidx.lifecycle.MutableLiveData
+import com.arp.mvvmbaseandroid.main.base.BaseViewModel
 import com.example.common.data_classes.TransactionList
 import com.example.data.usecases.GetTransactionUseCase
 import timber.log.Timber
@@ -13,7 +14,7 @@ class MainActivityViewModel : BaseViewModel() {
 
     private val getTransactionUseCase = GetTransactionUseCase(apiService)
 
-    var userId = ""
+    var userId = "Y5bmFQUKYwOJOGDeZ6NErWfvrqV2"
     var page = 1
 
 

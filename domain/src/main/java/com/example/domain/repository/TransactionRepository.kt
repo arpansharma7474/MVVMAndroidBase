@@ -1,6 +1,7 @@
 package com.example.domain.repository
 
-import com.example.domain.model.TransactionList
+import com.example.common.data_classes.TransactionList
+
 
 interface TransactionRepository {
 

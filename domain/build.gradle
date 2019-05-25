@@ -1,16 +1,20 @@
 apply plugin: 'java-library'
 
+apply plugin: 'kotlin'
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     /*Kotlin*/
 //    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation project(":common")
+
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
 
     /*Coroutines*/
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
 
 }
 

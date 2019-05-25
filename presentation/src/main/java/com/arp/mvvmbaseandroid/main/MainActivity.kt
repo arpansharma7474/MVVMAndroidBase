@@ -1,4 +1,4 @@
-package com.arp.mvvmbaseandroid.presentation
+package com.arp.mvvmbaseandroid.main
 
 import android.os.Bundle
 import android.widget.Toast
