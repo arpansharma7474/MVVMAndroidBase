@@ -1,8 +1,6 @@
-package com.arp.mvvmbaseandroid.common
+package com.arp.mvvmbaseandroid.util
 
-import android.content.Context
 import android.content.SharedPreferences
-import android.preference.PreferenceManager
 
 object Prefs {
 

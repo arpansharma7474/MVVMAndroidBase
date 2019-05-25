@@ -1,4 +1,4 @@
-package com.arp.mvvmbaseandroid.common
+package com.arp.mvvmbaseandroid.util
 
 import android.content.SharedPreferences
 import okhttp3.Interceptor
